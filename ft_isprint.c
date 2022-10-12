@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zer0 <zer0@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: alflores <alflores@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/13 10:51:49 by zer0              #+#    #+#             */
-/*   Updated: 2022/09/19 11:07:40 by zer0             ###   ########.fr       */
+/*   Created: 2022/10/12 17:59:16 by alflores          #+#    #+#             */
+/*   Updated: 2022/10/12 17:59:20 by alflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
 
 #include<stdio.h>
 #include "libft.h"
@@ -19,11 +21,3 @@ int	ft_isprint(int c)
 		return (1);
 	return (0);	
 }
-
-/*
-int main ()
-{
-    printf("\nEl valor es: %d", ft_isalnum('a'));
-    printf("\nEl valor es: %d", isalnum('a'));
-}
-*/
