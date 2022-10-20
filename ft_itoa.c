@@ -3,57 +3,65 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zer0 <zer0@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: alflores <alflores@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/13 19:24:22 by zer0              #+#    #+#             */
-/*   Updated: 2022/10/13 19:32:18 by zer0             ###   ########.fr       */
+/*   Created: 2022/10/20 18:22:19 by alflores          #+#    #+#             */
+/*   Updated: 2022/10/20 21:12:22 by alflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	len(long nb)
+static long	ft_neg(long n)
 {
-	int	len = 0;
-	if (nb < 0)
+	if (n < 0)
+		return (-n);
+	return (n);
+}
+
+static long	str_len(long n)
+{
+	long	len;
+	long	aux;
+	
+	len = 0;
+	aux = 0;
+	if (n == 0)
+		return (1); 
+	if (n < 0)
 	{
-		nb *= -1;
+		n = ft_neg(n);;
 		len++;
 	}
-	while (nb > 0)
+	while (n > 0)
 	{
-		nb /= 10;
+		n /= 10;
 		len++;
 	}
 	return(len);
 }
 
-char	*ft_itoa(int nb)
+char	*ft_itoa(int n)
 {
 	char	*str;
-	long	n;
-	int	i;
+	long	nb;
+	long	i;
 
-	n = nb;
-	i = len(n);
-	if(!(str = (char *)malloc(i + 1)))
-		return(0);
+	nb = ft_neg((long)n);
+	i = str_len((long)n);
+	str = (char *)malloc(sizeof(char) * (i + 1));
+	if(!str)
+		return (0);
 	str[i--] = '\0';
-	if (n == 0)
+	while (i >= 0)
 	{
-		str[0] = 48;
-		return(str);
-	}
-	if(n < 0)
-	{
-		str[0] = '-';
-		n *= -1;
-	}
-	while (n > 0)
-	{
-		str[i] = 48 + (n % 10);
-		n /= 10;
-		i--;
+		if (n < 0 && i == 0)
+			str[i--] = '-';
+		else
+		{
+			str[i--] = (nb % 10) + '0';
+			nb = nb / 10;
+		}
 	}
 	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: alflores <alflores@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 17:59:35 by alflores          #+#    #+#             */
-/*   Updated: 2022/10/12 20:31:20 by alflores         ###   ########.fr       */
+/*   Updated: 2022/10/20 21:22:26 by alflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,32 +25,5 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	}
 	if (dstsize != 0)
 		dst[i] = '\0';
-	return (ft_strlen(src));//PARA PREGUNTAR SI SE PUEDE PONER UN RETURN DE FUNCIÓN
+	return (ft_strlen(src));
 }
-
-
-/*
-//ERROR de que no da segmention fault cuando se le mando un parametro NULO
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
-{
-	size_t	i;
-	size_t	len;
-
-	len = 0;
-	if (src != NULL)
-	{
-		len = ft_strlen(src);
-		if (dst != NULL && dstsize != 0)
-		{
-			i = 0;
-			while ((i < len) && i < (dstsize - 1))
-			{
-				dst[i] = src[i];
-				i++;
-			}
-			dst[i] = '\0';
-		}
-	}
-	return (len);
-}
-*/
