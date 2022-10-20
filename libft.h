@@ -6,7 +6,7 @@
 /*   By: alflores <alflores@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 10:15:20 by zer0              #+#    #+#             */
-/*   Updated: 2022/10/20 21:39:11 by alflores         ###   ########.fr       */
+/*   Updated: 2022/10/20 21:49:17 by alflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,9 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char	*ft_strdup(const char *src);
+char	*ft_strtrim(char const *s1, char const *set);
+char	**ft_split(char const *s, char c);
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+
 #endif

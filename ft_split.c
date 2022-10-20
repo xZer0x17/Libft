@@ -3,95 +3,84 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zer0 <zer0@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: alflores <alflores@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/13 18:27:43 by zer0              #+#    #+#             */
-/*   Updated: 2022/10/13 19:24:05 by zer0             ###   ########.fr       */
+/*   Created: 2022/10/20 21:50:07 by alflores          #+#    #+#             */
+/*   Updated: 2022/10/20 21:53:10 by alflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	check_spaces(char c)
-//Para los espacios voy a hacerlos con comprobantes
-{
-	if ( c == 10 || c == 9 || c == 32)
-		return (1);
-	if (c == 0)
-		return (1);
-	return (0);
-}
-
-int	count_strings(char *str)
-//Recorre el string "limpiandola"
-{
-	int	i;
-	int	count;
-
-	count = 0;
-	i = 0;
-	while (str[i] != '\0')
-	{
-		while (str[i] != '\0' && check_spaces(str[i]))
-			i++;
-		if (str[i] != '\0')
-			count++;
-		while (str[i] != '\0' && !check_spaces(str[i]))
-			i++;
-	}
-	return (count);
-}
-
-int	ft_strlen_sep(char *str)
-//Distancia hasta el primer espacio
+static int	ft_wordlen(char const *s, char c)
 {
 	int	i;
 
 	i = 0;
-	while (str[i] && !check_spaces(str[i]))
+	while (s[i] != c && s[i] != '\0')
 		i++;
 	return (i);
 }
 
-char	*ft_word(char *str)
-//Devuelve la primera palabra sin separadores
+static int	ft_numwords(char const *s, char c)
 {
-	int		len_word;
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (s[i])
+	{
+		while (s[i] && s[i] == c)
+			i++;
+		if (s[i])
+			j++;
+		while (s[i] && s[i] != c)
+			i++;
+	}
+	return (j);
+}
+
+static char	*ft_word(char const *s, char c)
+{
 	int		i;
+	int		j;
 	char	*word;
 
 	i = 0;
-	len_word = ft_strlen_sep(str);
-	word = (char *)malloc(sizeof(char) * (len_word + 1));
-	while (i < len_word)
+	j = ft_wordlen(s, c);
+	word = (char *)malloc(sizeof(char) * ft_wordlen(s, c) + 1);
+	if (!word)
+		return (0);
+	while (i < j)
 	{
-		word[i] = str[i];
+		word[i] = s[i];
 		i++;
 	}
 	word[i] = '\0';
 	return (word);
 }
 
-char	**ft_split(char *str)
+char	**ft_split(char const *s, char c)
 {
-	char	**strings;
+	char	**words;
 	int		i;
 
 	i = 0;
-	strings = (char **)malloc(sizeof(char *)
-			* (count_strings(str) + 1));
-	while (*str != '\0')
+	if (!s)
+		return (0);
+	words = (char **)malloc(sizeof(char *) * (ft_numwords(s, c) + 1));
+	if (!words)
+		return (0);
+	while (*s)
 	{
-		while (*str != '\0' && check_spaces(*str))
-			str++;
-		if (*str != '\0')
-		{
-			strings[i] = ft_word(str);
-			i++;
-		}
-		while (*str && !check_spaces(*str))
-			str++;
+		while (*s == c && *s)
+			s++;
+		if (*s)
+			words[i++] = ft_word(s, c);
+		while (*s != c && *s)
+			s++;
 	}
-	strings[i] = 0;
-	return (strings);
+	words[i] = 0;
+	return (words);
 }

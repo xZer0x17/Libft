@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zer0 <zer0@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: alflores <alflores@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 11:43:53 by zer0              #+#    #+#             */
-/*   Updated: 2022/10/13 19:16:49 by zer0             ###   ########.fr       */
+/*   Created: 2022/10/20 21:52:07 by alflores          #+#    #+#             */
+/*   Updated: 2022/10/20 21:55:01 by alflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,9 @@ char *ft_strtrim(char const *s1, char const *set)
         i--;
     }
     //Ubicas el inicio y el final de set.
-    /*
     while (i >= 0 && *aux && ft_strchr(set, aux[i]) != 0)
         i--;
-    */
+    
     ++i;
     aux2 = ft_substr(aux, 0, i);
     if (!aux2)
