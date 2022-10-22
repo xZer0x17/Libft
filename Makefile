@@ -6,7 +6,7 @@
 #    By: alflores <alflores@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/19 10:08:04 by zer0              #+#    #+#              #
-#    Updated: 2022/10/20 21:49:53 by alflores         ###   ########.fr        #
+#    Updated: 2022/10/22 19:00:20 by alflores         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,11 @@ SRCS	= ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strle
 		ft_atoi.c ft_calloc.c ft_substr.c ft_strjoin.c ft_putendl_fd.c ft_itoa.c ft_putchar_fd.c \
 		ft_putstr_fd.c ft_strmapi.c ft_putnbr_fd.c ft_split.c ft_strdup.c ft_strtrim.c ft_striteri.c
 OBJS	= ${SRCS:.c=.o}
+
+SRCSB	= ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c ft_lstclear_bonus.c \
+		ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
+
+OBJSB	= ${SRCSB:.c=.o}
 NAME	= libft.a
 CC		= gcc
 RM		= rm -f
@@ -28,11 +33,11 @@ $(NAME): $(OBJS)
 	@ar rsc $(NAME) $(OBJS)
 
 clean:
-	@rm -f $(OBJS) $(OBJS_B)
+	@rm -f $(OBJS) $(OBJSB)
 
-fclean:
+fclean: clean
 	@rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re 
+.PHONY: all clean fclean re
