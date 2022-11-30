@@ -6,7 +6,7 @@
 /*   By: alflores <alflores@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 20:19:59 by alflores          #+#    #+#             */
-/*   Updated: 2022/10/21 20:32:36 by alflores         ###   ########.fr       */
+/*   Updated: 2022/11/10 18:30:30 by alflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 int	ft_lstsize(t_list *lst)
 {
 	int	i;
-	
+
 	i = 0;
-	while(lst)
+	while (lst)
 	{
 		i++;
 		lst = lst->next;

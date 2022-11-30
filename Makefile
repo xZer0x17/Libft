@@ -6,7 +6,7 @@
 #    By: alflores <alflores@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/19 10:08:04 by zer0              #+#    #+#              #
-#    Updated: 2022/10/22 19:00:20 by alflores         ###   ########.fr        #
+#    Updated: 2022/11/30 16:50:10 by alflores         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,14 +23,23 @@ SRCSB	= ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_
 OBJSB	= ${SRCSB:.c=.o}
 NAME	= libft.a
 CC		= gcc
-RM		= rm -f
 CFLAGS	= -Wextra -Werror -Wall
-AR		= ar -rcs
+BONUS	= .
+
+.c.o:	${CC} ${CFLAGS} -c $< -o $@
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@ar rsc $(NAME) $(OBJS)
+	@ar rsc $(NAME) $(OBJS) 
+
+
+$(BONUS): ${OBJS} ${OBJSB}
+	@ar rsc ${NAME} ${OBJS} ${OBJSB}
+
+bonus: ${BONUS}
+
+rebonus: fclean bonus
 
 clean:
 	@rm -f $(OBJS) $(OBJSB)
@@ -40,4 +49,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus rebonus

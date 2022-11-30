@@ -6,7 +6,7 @@
 /*   By: alflores <alflores@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 18:20:17 by alflores          #+#    #+#             */
-/*   Updated: 2022/10/05 18:31:12 by alflores         ###   ########.fr       */
+/*   Updated: 2022/11/10 18:35:58 by alflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	size_t			i;
 
 	i = 0;
-	aux_dest = dest; 
+	aux_dest = dest;
 	aux_src = (unsigned char *)src;
 	if (!dest && !src)
 		return (dest);

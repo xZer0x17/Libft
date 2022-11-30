@@ -6,7 +6,7 @@
 /*   By: alflores <alflores@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 21:20:09 by alflores          #+#    #+#             */
-/*   Updated: 2022/10/20 21:20:21 by alflores         ###   ########.fr       */
+/*   Updated: 2022/11/10 18:09:30 by alflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	else if (nb <= 9)
 	{
-		ft_putchar (nb + '0', fd);
+		ft_putchar(nb + '0', fd);
 		return ;
 	}
 	else

@@ -6,7 +6,7 @@
 /*   By: alflores <alflores@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 22:24:08 by alflores          #+#    #+#             */
-/*   Updated: 2022/10/12 22:24:46 by alflores         ###   ########.fr       */
+/*   Updated: 2022/11/10 19:20:33 by alflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	a = ft_strlen(s1);
 	b = ft_strlen(s2);
 	i = 0;
-	if (!(str = malloc((a + b + 1))) || !str)
+	str = malloc(a + b + 1);
+	if (!(str))
 		return (NULL);
 	while (a--)
 	{

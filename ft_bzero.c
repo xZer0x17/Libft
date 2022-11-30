@@ -6,7 +6,7 @@
 /*   By: alflores <alflores@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 18:28:16 by zer0              #+#    #+#             */
-/*   Updated: 2022/10/05 18:16:03 by alflores         ###   ########.fr       */
+/*   Updated: 2022/11/10 18:28:15 by alflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_bzero(void *str, size_t n)
 
 	aux = str;
 	if (n == 0)
-		return;	
+		return ;
 	while (n > 0)
 	{
 		*aux = '\0';

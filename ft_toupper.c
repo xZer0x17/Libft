@@ -6,15 +6,13 @@
 /*   By: alflores <alflores@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 18:00:33 by alflores          #+#    #+#             */
-/*   Updated: 2022/10/12 18:09:23 by alflores         ###   ########.fr       */
+/*   Updated: 2022/11/10 18:57:33 by alflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include<unistd.h>
 #include "libft.h"
 
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
 	if (c >= 97 && c <= 122)
 		return (c - 32);

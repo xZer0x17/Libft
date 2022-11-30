@@ -6,7 +6,7 @@
 /*   By: alflores <alflores@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 17:55:47 by alflores          #+#    #+#             */
-/*   Updated: 2022/10/12 17:56:20 by alflores         ###   ########.fr       */
+/*   Updated: 2022/11/10 18:31:19 by alflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_memcmp(const void *dst, const void *str, size_t n)
 	unsigned char	*str2;
 	unsigned char	*dst2;
 
-	dst2 = (unsigned char*)dst;
+	dst2 = (unsigned char *)dst;
 	str2 = (unsigned char *)str;
 	i = 0;
 	diff = 0;

@@ -6,7 +6,7 @@
 /*   By: alflores <alflores@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 18:22:19 by alflores          #+#    #+#             */
-/*   Updated: 2022/10/20 21:12:22 by alflores         ###   ########.fr       */
+/*   Updated: 2022/11/10 18:29:30 by alflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ static long	str_len(long n)
 {
 	long	len;
 	long	aux;
-	
+
 	len = 0;
 	aux = 0;
 	if (n == 0)
-		return (1); 
+		return (1);
 	if (n < 0)
 	{
-		n = ft_neg(n);;
+		n = ft_neg(n);
 		len++;
 	}
 	while (n > 0)
@@ -38,7 +38,7 @@ static long	str_len(long n)
 		n /= 10;
 		len++;
 	}
-	return(len);
+	return (len);
 }
 
 char	*ft_itoa(int n)
@@ -50,7 +50,7 @@ char	*ft_itoa(int n)
 	nb = ft_neg((long)n);
 	i = str_len((long)n);
 	str = (char *)malloc(sizeof(char) * (i + 1));
-	if(!str)
+	if (!str)
 		return (0);
 	str[i--] = '\0';
 	while (i >= 0)
