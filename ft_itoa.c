@@ -22,10 +22,8 @@ static long	ft_neg(long n)
 static long	str_len(long n)
 {
 	long	len;
-	long	aux;
 
 	len = 0;
-	aux = 0;
 	if (n == 0)
 		return (1);
 	if (n < 0)
